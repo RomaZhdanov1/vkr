@@ -189,6 +189,8 @@ min_samples_leaf = 5,
 random_state = 42,
 class_weight = "balanced")
 
+#model = MLPClassifier(hidden_layer_sizes = 1000,max_iter = 300,random_state = 42)
+
 cv = StratifiedKFold(
     n_splits=10,
     shuffle=True,
@@ -249,7 +251,7 @@ print("F1:", F1)
 print("ROC-AUC:", roc_auc)
 print(confusion_matrix(y_test, y_pred))
 
-'''ConfusionMatrixDisplay.from_predictions(y_test, y_pred, cmap='Greens')
+ConfusionMatrixDisplay.from_predictions(y_test, y_pred, cmap='Greens')
 plt.title("Матрица смежности")
 plt.xlabel("Предсказанная метка")
 plt.ylabel("Истинная метка")
@@ -305,4 +307,4 @@ plt.title("Важность признаков для Random Forest")
 
 plt.gca().invert_yaxis()
 
-plt.show()'''
+plt.show()
